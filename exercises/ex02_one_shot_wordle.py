@@ -13,7 +13,6 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
-counter: int = 0
 correct_counter: int = 0
 idx: int = 0
 result_output: str = ""
@@ -21,7 +20,7 @@ result_output: str = ""
 while (idx < len(guess_word)):
     if (guess_word[idx] == secret_word[idx]):
         correct_counter = correct_counter + 1
-        result_output = result_output + GREEN_BOX + " "
+        result_output = result_output + GREEN_BOX
     else:
         index: int = 0
         found_letter: bool = False
@@ -30,12 +29,10 @@ while (idx < len(guess_word)):
                 found_letter = True
             index = index + 1
         if (found_letter):
-            result_output = result_output + YELLOW_BOX + " "
+            result_output = result_output + YELLOW_BOX
         else:
-            result_output = result_output + WHITE_BOX + " "
-
+            result_output = result_output + WHITE_BOX
     idx = idx + 1
-
 
 print(result_output)
 if (correct_counter == len(guess_word)):
